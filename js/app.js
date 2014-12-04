@@ -27,12 +27,12 @@ app.controller("MyCtrl", function($scope, $location, $http) {
     
     //get API detail
     $scope.detail = function(name){
-        var reg = /s/g; 
-        var partialPath = name.replace(/\s+/g, ""); 
-        var path = "https://apps.dhis2.org/demo/api/" + partialPath + ".json";
-        
-        //test code.........
-        $scope.absPath = path;
+        var reg = /s/g;
+        var partialPath = name.replace(/\s+/g, "");
+        var initChar = partialPath.charAt(0);
+        initChar = initChar.toLowerCase();
+        partialPath = initChar + partialPath.substring(1);
+        var path = " http://inf5750-9.uio.no/api/" + partialPath + ".json";
         
         //make http call to get json that contain API detail information.
         $scope.$watch('path', function(){
@@ -43,8 +43,7 @@ app.controller("MyCtrl", function($scope, $location, $http) {
                 url: path
             });
             p.success(function(response, status, headers, config){
-            $scope.absPath = response.name;
-                console(response);
+                $scope.absPath = response;
             });
         })
     }
