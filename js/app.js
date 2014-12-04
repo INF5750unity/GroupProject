@@ -43,7 +43,7 @@ app.controller("MyCtrl", function($scope, $location, $http) {
                 url: path
             });
             p.success(function(response, status, headers, config){
-            $scope.absPath = response.name;
+                $scope.absPath = response.name;
                 console(response);
             });
         })

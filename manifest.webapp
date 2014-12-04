@@ -1,0 +1,27 @@
+{
+    "version": "1.0",
+    "name": "DHIS API Browser",
+    "launch_path": "index.html",
+    "installs_allowed_from": ["*"],
+    "default_locale": "en",
+    "description": "API Browser application for DHIS2.",
+    "icons": {
+        "16": null,
+        "48": null,
+        "128": null
+    },
+    "developer": {
+        "url": "http://inf5750-9.uio.no",
+        "name": "INF5750Unity",
+        "company": "University of Oslo",
+        "email": "smuddin@ifi.uio.no"
+    },
+    "activities": {
+        "dhis": {
+            "href": "http://inf5750-9.uio.no"
+        }
+    },
+    "folderName": null,
+    "baseUrl": null,
+    "launchUrl": null
+}
