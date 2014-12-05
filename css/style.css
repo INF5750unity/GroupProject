@@ -1,0 +1,8 @@
+
+#api-url, .api-code {
+    display: none;
+}
+
+pre code.hljs {
+    background-color: #f5f5f5;
+}

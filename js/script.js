@@ -1,55 +1,68 @@
 
 var baseUrl = 'http://inf5750-9.uio.no/api/';
 
-$( document ).ready(function() {
+jQuery( document ).ready(function() {
+
+    jQuery('#api-filter').fastLiveFilter('#api-list');
+    hljs.initHighlightingOnLoad();
+
 
     /* jQuery AJAX call to get the list of APIs */
-    $.ajax({
+    jQuery.ajax({
         url: baseUrl + "resources.json",
         data: {username: "admin", password: "district"},
         success: function( response ) {
-            console.log(baseUrl + "resources.json");
-            console.log( JSON.stringify(response, null, 4) );
-            //alert(response);
+
+            response = JSON.stringify(response, null, 4);
+            var dataObj = jQuery.parseJSON( response );
+            dataObj = dataObj.resources;
+
+            //console.log( response );
+            //console.log( dataObj );
+            var html = '';
+            jQuery.each(dataObj, function(index, itemData) {
+                html += '<li><a href="'+ itemData.href +'.json">'+ itemData.displayName +'</a></li>';
+            });
+
+            jQuery('#api-list').html(html);
+            jQuery('#api-filter').fastLiveFilter('#api-list');
+
+
+            /* handling click event to API List */
+            jQuery('#api-list li a').on("click", function(event) {
+
+                var apiUrl = jQuery(this).attr('href');
+                var apiUrlHtml = 'API URL: <code>'+ apiUrl +'</code>';
+
+                console.log( apiUrl );
+                jQuery('#api-url').html(apiUrlHtml);
+                jQuery('#api-url').show();
+
+                /* jQuery AJAX call to get the API response */
+                jQuery.ajax({
+                    url: apiUrl,
+                    data: {username: "admin", password: "district"},
+                    success: function( response ) {
+
+                        response = JSON.stringify(response, null, 4);
+                        //var dataObj = jQuery.parseJSON( response );
+                        //dataObj = dataObj.resources;
+
+                        console.log( response );
+                        //console.log( dataObj );
+                        jQuery('#api-response').html(response);
+                        jQuery('#api-response').parent().show();
+
+                        jQuery('pre code').each(function(i, block) {
+                            hljs.highlightBlock(block);
+                        });
+
+                    }
+                });
+
+                event.preventDefault();
+            });
         }
     });
 
-    //$(".highlight").html(JSON.stringify(jsonCode, null, 4));
-
 });
-
-/*
-var jsonCode = {
-    "pager": {"page": 1, "pageCount": 1, "total": 5},
-    "dataElementGroupSets": [{
-        "id": "jp826jAJHUc",
-        "created": "2011-12-24T11:24:25.124+0000",
-        "name": "Diagnosis",
-        "lastUpdated": "2013-03-20T12:15:08.002+0000",
-        "href": "http://inf5750-9.uio.no/api/dataElementGroupSets/jp826jAJHUc"
-    }, {
-        "id": "XY1vwCQskjX",
-        "created": "2011-12-24T11:24:25.124+0000",
-        "name": "Main data element groups",
-        "lastUpdated": "2013-03-20T11:59:54.664+0000",
-        "href": "http://inf5750-9.uio.no/api/dataElementGroupSets/XY1vwCQskjX"
-    }, {
-        "id": "lv8UXn17ZOm",
-        "created": "2011-12-24T11:24:25.124+0000",
-        "name": "Morbidity/Mortality",
-        "lastUpdated": "2013-03-15T15:08:57.586+0000",
-        "href": "http://inf5750-9.uio.no/api/dataElementGroupSets/lv8UXn17ZOm"
-    }, {
-        "id": "d845J2iVqTO",
-        "created": "2011-12-24T11:24:25.124+0000",
-        "name": "PMTCT",
-        "lastUpdated": "2013-03-15T15:08:57.591+0000",
-        "href": "http://inf5750-9.uio.no/api/dataElementGroupSets/d845J2iVqTO"
-    }, {
-        "id": "VxWloRvAze8",
-        "created": "2013-04-09T12:48:18.126+0000",
-        "name": "Tracker-based data",
-        "lastUpdated": "2013-04-09T12:48:18.126+0000",
-        "href": "http://inf5750-9.uio.no/api/dataElementGroupSets/VxWloRvAze8"
-    }]
-};*/

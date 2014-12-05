@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HTML API Browser</title>
 
-    <!-- Bootstrap -->
+    <!-- Styles -->
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="js/highlight/styles/default.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
 
     <!-- JavaScript -->
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery.syntaxhighlighter.min.js"></script>
+    <script type="text/javascript" src="js/jquery.fastLiveFilter.js"></script>
+    <script type="text/javascript" src="js/highlight/highlight.pack.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -32,48 +35,31 @@
     </div>
 </nav>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-xs-3">
+<div class="container-fluid"><div class="row">
 
-            <form class="form-inline" role="form">
-                <div class="form-group col-lg-12">
-                    <input type="text" class="form-control input-lg" id="inputPassword2" placeholder="Filter APIs">
-                </div>
-            </form>
+    <div class="col-xs-3">
 
-            <ul class="list-unstyled">
-                <li><a href="#">Data Element Group Sets</a></li>
-                <li><a href="#">Interpretation Comments</a></li>
-                <li><a href="#">Data Element Groups</a></li>
-                <li><a href="#">Charts</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">Relationship Types</a></li>
-                <li><a href="#">Organisation Units</a></li>
-                <li><a href="#">Sections</a></li>
-                <li><a href="#">Concepts</a></li>
-                <li><a href="#">Map Layers</a></li>
-                <li><a href="#">Interpretations</a></li>
-                <li><a href="#">Organisation Unit Levels</a></li>
-            </ul>
-
-        </div>
-
-        <div class="col-xs-9">
-
-            <div class="well well-sm">
-                API URL:
-                <code>http://inf5750-9.uio.no/api/dataElementGroupSets.json</code>
+        <form class="form-inline" role="form">
+            <div class="form-group col-lg-12">
+                <input type="text" class="form-control input-lg" id="api-filter" placeholder="Filter APIs">
             </div>
+        </form>
 
-            <pre class="highlight">
-
-            </pre>
-
-        </div>
+        <ul class="list-unstyled" id="api-list"></ul>
 
     </div>
-</div>
+
+    <div class="col-xs-9">
+
+        <div class="well well-sm" id="api-url">
+            API URL: <code>http://inf5750-9.uio.no/api/dataElementGroupSets.json</code>
+        </div>
+
+        <pre class="api-code"><code id="api-response"></code></pre>
+
+    </div>
+
+</div></div>
 
 </body>
 </html>
