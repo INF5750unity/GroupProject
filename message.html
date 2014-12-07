@@ -33,21 +33,21 @@
 </nav>
 
 <div class="container"><div class="row">
-    <div class="col-xs-9">
-	<h1>Feedback</h1>
-	<p>This is a schema for feedback if any advice of improvement, write us a message and we will take it in considering.</p>
-			<textarea id="messages"cols="50" rows="10"></textarea>
-		<br>
+    <div class="col-sm-12">
+        <h1>Feedback</h1>
+        <p>This is a schema for feedback if any advice of improvement, write us a message and we will take it in considering.</p>
+                <textarea id="messages"cols="50" rows="10"></textarea>
+		<br />
 		<div>
 			<input type="button" value="Back" class="btn btn-default" ng-click="returntoIndex()">
 			<input type="button" value="Send" class="btn btn-primary" ng-click="sendMessage()">
 		</div>
-		<br>
+		<br />
+
 		<div ng-show="sending">sending</div>
 		<div ng-show="sendsucceed">send succeed</div>
 		<div ng-show="sendfailed">send failed</div>
     </div>
-
 </div></div>
 
 </body>

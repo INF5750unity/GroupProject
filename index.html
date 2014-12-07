@@ -32,31 +32,23 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="./">HTML API Browser</a>
         </div>
-<<<<<<< HEAD
-	<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-=======
-		<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
->>>>>>> 71fee8bd84befb4e97439a67adb1a8edd8db67a8
-		<ul class="nav navbar-nav navbar-right">
-			<li><a href="index.html">Home</a></li>
-			<li><a href="message.html">FeedBack</a></li>
-			<li><a href="about.html">About</a></li>
-		</ul>
-	</nav>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="message.html">FeedBack</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
     </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> 71fee8bd84befb4e97439a67adb1a8edd8db67a8
 </nav>
 
 <div class="container-fluid"><div class="row">
 
-    <div class="col-xs-3">
+    <div class="col-sm-3">
 
-        <form class="form-inline" role="form">
-            <div class="form-group col-lg-12">
-                <input type="text" class="form-control input-lg" id="api-filter" placeholder="Filter APIs">
+        <form class="form-inline filter-form" role="form">
+            <div class="form-group col-sm-12">
+                <input type="text" class="form-control" id="api-filter" placeholder="Filter APIs">
             </div>
         </form>
 
@@ -64,18 +56,20 @@
 
     </div>
 
-    <div class="col-xs-9">
+    <div class="col-sm-9">
 
-	<div id="welcome">
-		<H2>HTML API Browser:</H2>
-		
-		<p>We are using HTML API Browser as an tool to grab all the available API's in DHIS2 and manage it together so that it is easier for the users to navigate between different API's and also provide functionality to filter API's.</p>
+        <div id="welcome">
+            <H2>HTML API Browser</H2>
 
-		<p>What it does?</p>
-		<p>The API Browser basically simplifies navigation between API's to its users.</p>
+            <p>
+                We are using HTML API Browser as an tool to grab all the available APIs in
+                DHIS2 and manage it together so that it is easier for the users to navigate
+                between different API's and also provide functionality to filter APIs.
+            </p>
+            <p>The API Browser basically simplifies navigation between APIs to its users.</p>
+            <p>Click on any of the left hand side API to display the response.</p>
 
-		<p>How the API's Working? Process?</p>
-	</div>
+        </div>
 
         <div class="well well-sm" id="api-url">
             API URL: <code>http://inf5750-9.uio.no/api/dataElementGroupSets.json</code>

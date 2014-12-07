@@ -29,7 +29,7 @@ jQuery( document ).ready(function() {
             /* handling click event to API List */
             jQuery('#api-list li a').on("click", function(event) {
 
-		jQuery('#welcome').hide();
+        		jQuery('#welcome').hide();
 
                 var apiUrl = jQuery(this).attr('href');
                 var apiUrlHtml = 'API URL: <code>'+ apiUrl +'</code>';
