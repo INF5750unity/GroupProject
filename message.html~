@@ -39,8 +39,8 @@
 			<textarea id="messages"cols="50" rows="10"></textarea>
 		<br>
 		<div>
-			<input type="button" value="Back" class="btn btn-default" ng-click="returntoIndex()">
-			<input type="button" value="Send" class="btn btn-primary" ng-click="sendMessage()">
+			<input type="button" value="Back" class="btn btn-primary" ng-click="returntoIndex()">
+			<input type="button" value="Send" class="btn btn-default" ng-click="sendMessage()">
 		</div>
 		<br>
 		<div ng-show="sending">sending</div>

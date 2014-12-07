@@ -9,19 +9,13 @@
     <!-- Styles -->
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="css/style.css" />
-
-    <!-- JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/angular.js"></script>
-	<script type="text/javascript" src="js/sendMessage.js"></script>
 </head>
-<body ng-controller="MyCtrl">
-
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="./">HTML API Browser</a>
         </div>
+
 		<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="index.html">Home</a></li>
@@ -34,21 +28,17 @@
 
 <div class="container"><div class="row">
     <div class="col-xs-9">
-	<h1>Feedback</h1>
-	<p>This is a schema for feedback if any advice of improvement, write us a message and we will take it in considering.</p>
-			<textarea id="messages"cols="50" rows="10"></textarea>
-		<br>
-		<div>
-			<input type="button" value="Back" class="btn btn-default" ng-click="returntoIndex()">
-			<input type="button" value="Send" class="btn btn-primary" ng-click="sendMessage()">
-		</div>
-		<br>
-		<div ng-show="sending">sending</div>
-		<div ng-show="sendsucceed">send succeed</div>
-		<div ng-show="sendfailed">send failed</div>
+	<h1>About us</h1>
+	<p>The group consist of four students from University of Oslo.</p>
+	<p>Tinh Le <a href="mailto:tinhtl@ifi.uio.no">(tinhtl)</a></p>
+	<p>Xianglin Ye <a href="mailto:xiangliy@ifi.uio.no">(xiangliy)</a></p>
+	<p>Arif Uddin <a href="mailto:smuddin@ifi.uio.no">(smuddin)</a></p>
+	<p>Ram Bahadur Gharti <a href="mailto:rambg@ifi.uio.no">(rambg)</a></p>
+	</br>
+	<p>If you want to read more about our project, you can find all information on our Wikipage: <a href="https://wiki.uio.no/mn/ifi/inf5750/index.php/INF5750Unity">https://wiki.uio.no/mn/ifi/inf5750/index.php/INF5750Unity</a> </p>
+<p>You can also find us on facebook. Our facebook group is: <a href="https://www.facebook.com/groups/793896964023516/">https://www.facebook.com/INF5750Unity"</a></p>
     </div>
-
-</div></div>
+</div>
 
 </body>
 </html>
