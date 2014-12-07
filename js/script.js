@@ -17,8 +17,6 @@ jQuery( document ).ready(function() {
             var dataObj = jQuery.parseJSON( response );
             dataObj = dataObj.resources;
 
-            //console.log( response );
-            //console.log( dataObj );
             var html = '';
             jQuery.each(dataObj, function(index, itemData) {
                 html += '<li><a href="'+ itemData.href +'.json">'+ itemData.displayName +'</a></li>';
@@ -36,7 +34,6 @@ jQuery( document ).ready(function() {
                 var apiUrl = jQuery(this).attr('href');
                 var apiUrlHtml = 'API URL: <code>'+ apiUrl +'</code>';
 
-                console.log( apiUrl );
                 jQuery('#api-url').html(apiUrlHtml);
                 jQuery('#api-url').show();
 
@@ -47,11 +44,7 @@ jQuery( document ).ready(function() {
                     success: function( response ) {
 
                         response = JSON.stringify(response, null, 4);
-                        //var dataObj = jQuery.parseJSON( response );
-                        //dataObj = dataObj.resources;
 
-                        console.log( response );
-                        //console.log( dataObj );
                         jQuery('#api-response').html(response);
                         jQuery('#api-response').parent().show();
 
