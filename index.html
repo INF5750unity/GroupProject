@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -180,4 +181,166 @@
 </div></div>
 
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HTML API Browser</title>
+
+    <!-- Styles -->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="js/highlight/styles/default.css" />
+    <link type="text/css" rel="stylesheet" href="js/chosen/chosen.min.css" />
+    <link type="text/css" rel="stylesheet" href="js/nanoscroller.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.fastLiveFilter.js"></script>
+    <script type="text/javascript" src="js/highlight/highlight.pack.js"></script>
+    <script type="text/javascript" src="js/chosen/chosen.jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.nanoscroller.min.js"></script>
+    <script type="text/javascript" src="js/date.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="./">HTML API Browser</a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="message.html">FeedBack</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </div>
+</nav>
+
+<div class="container-fluid first-cont"><div class="row">
+
+    <div class="col-sm-3 sidebar">
+
+        <form class="form-inline filter-form" role="form">
+            <div class="form-group col-sm-12">
+                <input type="text" class="form-control" id="api-filter" placeholder="Filter APIs">
+            </div>
+        </form>
+
+        <div class="nano">
+            <div id="apiListDiv" class="nano-content"></div>
+        </div>
+
+    </div>
+
+    <div class="col-sm-9 main-cont">
+
+        <div id="welcome">
+            <H2>HTML API Browser</H2>
+
+            <p>
+                We are using HTML API Browser as an tool to grab all the available APIs in
+                DHIS2 and manage it together so that it is easier for the users to navigate
+                between different API's and also provide functionality to filter APIs.
+            </p>
+            <p>The API Browser basically simplifies navigation between APIs to its users.</p>
+            <p>Click on any of the left hand side API to display the response.</p>
+
+        </div>
+
+        <div id="apiPresentation">
+
+            <div class="well well-sm" id="api-url">
+                <p>API URL: <code class="url">http://inf5750-9.uio.no/api/dataElementGroupSets.json</code></p>
+                <p>API Documentation: <code class="documentation">https://www.dhis2.org/doc/snapshot/en/developer/html/ch01.html</code></p>
+            </div>
+
+
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default first">
+                    <div class="panel-heading" role="tab" id="headingParameter">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseParameter" aria-expanded="true" aria-controls="collapseParameter">
+                                API Parameters
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseParameter" class="panel-collapse collapse in" role="tabpanel">
+                        <div class="panel-body">
+
+                            <form id="paramForm" role="form">
+                                <div class="form-group">
+                                    <label for="paramName">Search for Name</label>
+                                    <input type="text" id="paramName" class="form-control" placeholder="Search for Name" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="paramFields">Select fields to show</label>
+                                    <select id="paramFields" multiple="multiple" data-placeholder="Select fields to show" class="chosen-select form-control"></select>
+                                </div>
+                                <input type="hidden" value="" id="baseApiUrl" />
+                                <button type="submit" id="button-reset" class="btn btn-default">Reset</button>
+                                <button type="submit" id="button-submit" class="btn btn-primary">Submit</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default last">
+                    <div class="panel-heading" role="tab" id="headingCode">
+                        <h4 class="panel-title">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseCode" aria-expanded="false" aria-controls="collapseCode">
+                                jQuery Code Sample
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseCode" class="panel-collapse collapse" role="tabpanel">
+                        <div class="panel-body" id="code-snippet">
+                            <pre><code class="javascript"></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- API response presentation -->
+            <ul role="tablist" class="nav nav-tabs" id="apiPresentationTab">
+                <li role="presentation" class="active">
+                    <a data-toggle="tab" role="tab" id="table-tab" href="#table-view">HTML View</a>
+                </li>
+                <li role="presentation">
+                    <a data-toggle="tab" id="json-tab" role="tab" href="#json-view">JSON View</a>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="apiPresentationContent">
+                <div id="table-view" class="tab-pane fade active in" role="tabpanel">
+
+                </div>
+                <div id="json-view" class="tab-pane fade" role="tabpanel">
+                    <pre class="api-code"><code id="api-response"></code></pre>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div></div>
+
+</body>
+>>>>>>> 5d49a7951ee8e4d9c0eee21a6a222d70e0ee13e8
 </html>
